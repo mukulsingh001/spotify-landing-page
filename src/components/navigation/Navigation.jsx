@@ -17,7 +17,9 @@ const navItems = (
 );
 
 const Navigation = () => {
-  const [showButton, setShowButton] = useState(false);
+  const [showButton, setShowButton] = useState(
+    window.innerWidth < 640 ? true : false
+  );
   const [showMenu, setShowMenu] = useState(false);
 
   useEffect(() => {

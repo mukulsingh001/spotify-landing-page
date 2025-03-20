@@ -9,8 +9,6 @@ const App = () => {
   const [categories, setCategories] = useState(null);
   const [refresh, setRefresh] = useState(false);
 
-  console.log(newRelease);
-  console.log(categories);
   useEffect(() => {
     let token = sessionStorage.getItem("access_token");
 
@@ -36,12 +34,11 @@ const App = () => {
 
     fetchData().catch((err) => {
       if (err.status === 401) {
-        console.log(err.status);
         getAccessToken()
           .then(({ data: { access_token } }) => {
             sessionStorage.setItem("access_token", access_token);
           })
-          .catch((error) => console.log(error));
+          .catch((error) => console.error(error));
         setRefresh((prev) => !prev);
       }
     });
