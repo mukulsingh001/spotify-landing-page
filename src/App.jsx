@@ -51,8 +51,8 @@ const App = () => {
       <Footer />
     </>
   ) : (
-    <div className="flex  justify-center items-center h-lvh">
-      <p>Loading...</p>
+    <div className="flex  justify-center items-center h-lvh bg-black">
+      <p className="text-3xl text-white">Loading...</p>
     </div>
   );
 };
